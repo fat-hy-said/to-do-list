@@ -7,7 +7,6 @@ const statsBadge = document.querySelector('.stats-badge');
 const dateDisplay = document.querySelector('#date-display');
 const progressBar = document.querySelector('#progress-bar');
 const appContainer = document.querySelector('.app-container');
-const parentBtnFilter = document.querySelector('.filter-buttons');
 
 const allTask = JSON.parse(localStorage.getItem('task')) || [];
 
