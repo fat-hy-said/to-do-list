@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskflow | قائمة المهام الاحترافية</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Font: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header: العنوان والإحصائيات السريعة -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>مهامي <span>.</span></h1>
+                <p id="date-display">اليوم، 11 أغسطس</p>
+            </div>
+            <div class="stats-badge">
+                <span id="completed-count">0</span> / <span id="total-count">0</span> مكتمل
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar" style="width: 0%;"></div>
+        </div>
+
+        <!-- Input Section: إضافة مهمة جديدة -->
+        <form class="todo-form" id="todo-form">
+            <div class="input-wrapper">
+                <i class="fa-solid fa-plus input-icon"></i>
+                <input type="text" id="todo-input" placeholder="أضف مهمة جديدة للتركيز عليها..." autocomplete="off"
+                    required />
+                <select id="priority-select" aria-label="أولوية المهمة">
+                    <option value="low">عادي</option>
+                    <option value="medium" selected>متوسط</option>
+                    <option value="high">هام جداً</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-add">إضافة</button>
+        </form>
+
+        <!-- Filters Section: الفلترة والتصفية -->
+        <div class="filters-bar">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="active">المتبقية</button>
+                <button class="filter-btn" data-filter="completed">المكتملة</button>
+            </div>
+            <button class="btn-clear-completed" id="clear-completed">مسح المكتمل</button>
+        </div>
+
+        <!-- Task List Section -->
+        <main class="todo-list-container">
+            <ul class="todo-list" id="todo-list">
+            </ul>
+
+            <!-- Empty State: تظهر لما القائمة تكون فاضية -->
+            <div class="empty-state hidden" id="empty-state">
+                <i class="fa-solid fa-list-check empty-icon"></i>
+                <p>لا توجد مهام حالياً. استمتع بيومك!</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
